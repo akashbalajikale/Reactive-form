@@ -1,0 +1,46 @@
+ .ng-invalid.ng-touched,
+ .ng-invalid.ng-dirty{
+    border-color: rgb(220, 91, 91) ;
+}
+
+input[type="checkbox" i]:disabled {
+    outline:2px solid red !important;
+}
+
+.card{
+    padding: 20px;
+    margin-bottom: 70px;
+    background-color: transparent;
+    border: 1px solid #000;
+    box-shadow: 0 0 0 0.1;
+    
+}
+
+.card-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.594);
+    border-radius: 8px;
+}
+
+ .form-group label{
+        color: aliceblue;
+        
+    }
+
+.form-group strong {
+    margin-top: 0.5rem;  
+    display: block;  
+    background-color: aliceblue;
+}
+ 
+
+// .btn:hover{
+//     background-color: rgb(46, 3, 115);
+//     border: transparent;
+   
+// }
+
+ 
+ 
+// .card{
+//     padding: 15px 20px;
+// }
