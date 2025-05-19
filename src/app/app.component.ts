@@ -28,9 +28,41 @@ export class AppComponent implements OnInit {
     console.log(this.signUpForm);
     this.OnSkillAdd()
     this.CheckBoxHandler();
-    this.PatchValueHandler()
+    this.PatchValueHandler();
+    this.ConfirmPassCheck()
+    this.confirmPassvalid()
    
   }
+
+  confirmPassvalid(){
+     this.f['Confirmpassword'].valueChanges
+        .subscribe(confirmPassval =>{
+            if(this.f['password'].value === confirmPassval){
+                 this.f['Confirmpassword'].setErrors(null)
+            }else{
+              this.f['Confirmpassword'].setErrors({
+                passconfirmmatch : `Pasword & confirm-password must be match`
+              })
+            }
+        })
+  }
+
+
+
+
+   ConfirmPassCheck(){
+    this.f['password'].valueChanges
+      .subscribe(res =>{
+        if(this.f['password'].valid){
+          this.f['Confirmpassword'].enable();
+        }else{
+           this.f['Confirmpassword'].disable();
+            this.f['Confirmpassword'].reset();
+        }
+      })
+   }
+
+
   PatchValueHandler(){
     this.f['isAddSame'].valueChanges
         .subscribe((res:Boolean) =>{
@@ -110,11 +142,13 @@ export class AppComponent implements OnInit {
 
 
 onSignUp(){
-  console.log(this.signUpForm);
+  // console.log(this.signUpForm);
   if(this.signUpForm.valid){
-     console.log(this.signUpForm.value);
-     this.signUpForm.reset();
+    //  console.log(this.signUpForm.value);
+    //  this.signUpForm.reset();
+    let val = {...this.signUpForm.getRawValue()}
   }
+  console.log(this.signUpForm);
   
 }
 

@@ -254,22 +254,18 @@
                     <div class="form-group">
                         <label for="Confirmpassword">ConfirmPassword</label>
                         <input type="text" id="Confirmpassword" formControlName="Confirmpassword" class="form-control">
-                        <!-- <strong
-                        *ngIf="f['password'].touched && f['password'].hasError('required')"
-                        class="text-danger">
-                            Password is required field
-                        </strong>
+                         
                          <strong
-                        *ngIf="f['password'].dirty && f['password'].hasError('pattern')"
+                        *ngIf="f['Confirmpassword'].dirty && f['Confirmpassword'].hasError('passconfirmmatch')"
                         class="text-danger">
-                           Invalid Password : Password contain 1 Capital , 1 small letter , one special charecter & one number
-                        </strong> -->
+                           
+                        </strong>
                     </div>
                 </div>
                </div>
 
 
-               <button [disabled]="signUpForm.invalid" class="btn btn-block btn-info">Sign Up</button>
+               <button class="btn btn-block btn-info">Sign Up</button>
 
             </form>
             </div>
