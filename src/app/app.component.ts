@@ -89,7 +89,8 @@ export class AppComponent implements OnInit {
     }),
     isAddSame : new FormControl({value : false, disabled :true}),
     skills : new FormArray([]),
-    dependents : new FormArray([])
+    dependents : new FormArray([]),
+    password : new FormControl(null, [Validators.required, Validators.pattern(CustomRegex.password)])
     })
 
   }

@@ -233,6 +233,20 @@
                 </div>
                </div>
         
+               <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" id="password" formControlName="password" class="form-control">
+                        <strong
+                        *ngIf="f['password'].touched && f['password'].hasError('required')"
+                        class="text-danger">
+                            Password is required field
+                        </strong>
+                    </div>
+                </div>
+               </div>
+
 
                <button [disabled]="signUpForm.invalid" class="btn btn-block btn-info">Sign Up</button>
 
