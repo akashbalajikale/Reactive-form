@@ -246,7 +246,7 @@
                          <strong
                         *ngIf="f['password'].dirty && f['password'].hasError('pattern')"
                         class="text-danger">
-                           Invalid Password : Password contain 1 Capital , 1 small letter , one special charecter & one number
+                           Invalid Password : Password must be 8 characters long and include one lowercase letter, one uppercase letter, one digit and one special character
                         </strong>
                     </div>
                 </div>
@@ -258,14 +258,14 @@
                          <strong
                         *ngIf="f['Confirmpassword'].dirty && f['Confirmpassword'].hasError('passconfirmmatch')"
                         class="text-danger">
-                           
+                            {{f['Confirmpassword'].errors?.['passconfirmmatch']}}
                         </strong>
                     </div>
                 </div>
                </div>
 
 
-               <button class="btn btn-block btn-info">Sign Up</button>
+               <button [disabled]="signUpForm.invalid" class="btn btn-block btn-info">Sign Up</button>
 
             </form>
             </div>
