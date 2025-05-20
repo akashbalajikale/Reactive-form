@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
 
   title = 'ReactiveForm';
   signUpForm !: FormGroup;
+  showPassword: boolean = false;
+
 
   gendersArr : Array<string> =['male', 'female', 'others']
 

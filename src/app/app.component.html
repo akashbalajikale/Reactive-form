@@ -237,7 +237,18 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="text" id="password" formControlName="password" class="form-control">
+                            <input 
+                            [type]="showPassword ? 'text' : 'password'" 
+                            id="password" 
+                            formControlName="password" 
+                            class="form-control">
+
+                           <span 
+                            class="position-absolute" 
+                            style="top: 38px; right: 20px; cursor: pointer; color:black;"
+                            (click)="showPassword = !showPassword" >
+                            <i class="fa" [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+                        </span>
                         <strong
                         *ngIf="f['password'].touched && f['password'].hasError('required')"
                         class="text-danger">
