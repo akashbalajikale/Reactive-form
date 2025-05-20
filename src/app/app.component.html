@@ -275,6 +275,48 @@
                 </div>
                </div>
 
+               <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                            <input 
+                            [type]="showPassword ? 'text' : 'password'" 
+                            id="password" 
+                            formControlName="password" 
+                            class="form-control">
+
+                           <span 
+                            class="position-absolute" 
+                            style="top: 38px; right: 20px; cursor: pointer; color:black;"
+                            (click)="showPassword = !showPassword" >
+                            <i class="fa" [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+                        </span>
+                        <strong
+                        *ngIf="f['password'].touched && f['password'].hasError('required')"
+                        class="text-danger">
+                            Password is required field
+                        </strong>
+                         <strong
+                        *ngIf="f['password'].dirty && f['password'].hasError('pattern')"
+                        class="text-danger">
+                           Invalid Password : Password must be 8 characters long and include one lowercase letter, one uppercase letter, one digit and one special character
+                        </strong>
+                    </div>
+                </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Confirmpassword">ConfirmPassword</label>
+                        <input type="text" id="Confirmpassword" formControlName="Confirmpassword" class="form-control">
+                         
+                         <strong
+                        *ngIf="f['Confirmpassword'].dirty && f['Confirmpassword'].hasError('passconfirmmatch')"
+                        class="text-danger">
+                            {{f['Confirmpassword'].errors?.['passconfirmmatch']}}
+                        </strong>
+                    </div>
+                </div>
+               </div>
+
 
                <button [disabled]="signUpForm.invalid" class="btn btn-block btn-info">Sign Up</button>
 
